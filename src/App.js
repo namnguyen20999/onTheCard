@@ -1,25 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import QRCode from 'qrcode.react'
+import Logo from '../src/assets/onTheCardLogo.png'
 
-function App() {
+const App = () => {
+  const [ qrInput, setQrInput] = useState('');
+
+  const handleGetInput = (e) => {
+    setQrInput(e.target.value);
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+      <div>
+      <input type="text" onChange={handleGetInput}/>
+      <QRCode 
+      value={qrInput}
+      level="L" 
+      imageSettings={{src:Logo, excavate:true, height: 30, width: 30}}
+      />
+      </div>
+  )
 }
 
 export default App;
