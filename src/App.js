@@ -15,9 +15,9 @@ const App = () => {
         <Input type="text" onChange={handleGetInput} />
           <StyledGrid>
             <QRCode 
-            value={qrInput}
-            level="L" 
-            imageSettings={{src:Logo, height: 30, width: 30}}
+              value={qrInput}
+              level="L" 
+              imageSettings={{src:Logo, height: 30, width: 30}}
             />
           </StyledGrid>
       </StyledGrid>
