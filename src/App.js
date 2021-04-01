@@ -14,7 +14,7 @@ const App = () => {
       <QRCode 
       value={qrInput}
       level="L" 
-      imageSettings={{src:Logo, excavate:true, height: 30, width: 30}}
+      imageSettings={{src:Logo, height: 30, width: 30}}
       />
       </div>
   )
